@@ -1,0 +1,112 @@
+
+.la-shell-head, .la-shell-head-logo, .la-shell-head-tab, .la-shell-head-options,
+.la-shell-main, .la-shell-main-status, .la-shell-main-game, .la-shell-main-roadmap, .la-shell-main-code, .la-shell-main-logs,
+.la-shell-foot, .la-shell-chat, .la-shell-modal
+{
+  position: absolute;
+}
+
+.la-shell-head{
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #444;
+}
+
+.la-shell-head-logo{
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 50px;
+  background: orange;
+}
+
+.la-shell-head-tab{
+  top: 0;
+  left: 300px;
+  width: 500px;
+  height: 50px;
+}
+
+.la-shell-head-options{
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 50px;
+}
+
+.la-shell-main{
+  top: 50px;
+  left: 0;
+  bottom: 50px;
+  right: 0;
+  background-color: #eee;
+}
+
+.la-shell-main-status{
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+}
+
+.la-shell-main-game{
+  top: 50px;
+  left: 0;
+  width: 300px;
+  height: 250px;
+  background-color: cyan;
+}
+
+.la-shell-main-roadmap{
+  top: 300px;
+  left: 0;
+  width: 300px;
+  bottom: 0;
+  background-color: blue;
+}
+
+.la-shell-main-code{
+  top: 50px;
+  left: 300px;
+  right: 200px;
+  bottom: 0;
+  background-color: white;
+}
+
+.la-shell-main-logs{
+  top: 50px;
+  width: 200px;
+  bottom: 0;
+  right: 0;
+}
+
+.la-shell-foot{
+  height: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+}
+
+.la-shell-chat{
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 15px;
+  background: red;
+  z-index: 1;
+}
+
+.la-shell-modal{
+  margin-top: -200px;
+  margin-left: -200px;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  background: yellow;
+  border-radius: 3px;
+  z-index: 2;
+}
