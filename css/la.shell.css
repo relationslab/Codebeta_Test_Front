@@ -10,36 +10,36 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  height: 40px;
   background-color: #444;
 }
 
 .la-shell-head-logo{
   top: 0;
   left: 0;
-  width: 300px;
-  height: 50px;
+  width: 320px;
+  bottom: 0;
   background: orange;
 }
 
 .la-shell-head-tab{
   top: 0;
-  left: 300px;
+  left: 320px;
   width: 500px;
-  height: 50px;
+  bottom: 0;
 }
 
 .la-shell-head-options{
   top: 0;
   right: 0;
   width: 200px;
-  height: 50px;
+  bottom: 0;
 }
 
 .la-shell-main{
-  top: 50px;
+  top: 40px;
   left: 0;
-  bottom: 50px;
+  bottom: 20px;
   right: 0;
   background-color: #eee;
 }
@@ -48,28 +48,28 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  height: 40px;
 }
 
 .la-shell-main-game{
-  top: 50px;
+  top: 40px;
   left: 0;
-  width: 300px;
-  height: 250px;
+  width: 320px;
+  height: 380px;
   background-color: cyan;
 }
 
 .la-shell-main-roadmap{
-  top: 300px;
+  top: 420px;
   left: 0;
-  width: 300px;
+  width: 320px;
   bottom: 0;
   background-color: blue;
 }
 
 .la-shell-main-code{
-  top: 50px;
-  left: 300px;
+  top: 40px;
+  left: 320px;
   right: 200px;
   bottom: 0;
   background-color: white;
@@ -83,7 +83,7 @@
 }
 
 .la-shell-foot{
-  height: 50px;
+  height: 20px;
   left: 0;
   right: 0;
   bottom: 0;
