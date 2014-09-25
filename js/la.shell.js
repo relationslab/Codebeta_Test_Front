@@ -13,7 +13,7 @@
 la.shell = ( function(){
   var configMap = {
     anchor_schema_map : {
-      chat : { open : true, closed : true }
+      chat : { opened : true, closed : true }
     }
 
     , main_html: String()
@@ -32,7 +32,6 @@ la.shell = ( function(){
     + '</div>'
 
     + '<div class="la-shell-foot"></div>'
-    + '<div class="la-shell-chat"></div>'
     + '<div class="la-shell-modal"></div>'
 
     , chat_extend_time : 250
@@ -44,18 +43,15 @@ la.shell = ( function(){
   }
 
   , stateMap = {
-    $container : null
-    , anchor_map : {}
-    , is_chat_rectacted : true
+      anchor_map : {}
   }
   , jqueryMap = { }
 
   , copyAnchorMap
   , setJqueryMap
-  , toggleChat
   , changeAnchorPart
   , onHashchange
-  , onClickChat
+  , setChatAnchor
   , initModule;
 
   copyAnchorMap = function(){
@@ -66,45 +62,11 @@ la.shell = ( function(){
     var $container = stateMap.$container;
     jqueryMap = {
       $container: $container
-      , $chat : $container.find('.la-shell-chat')
     };
   };
 
-  toggleChat = function( do_extend, callback ){
-    var px_chat_ht = jqueryMap.$chat.height()
-    , is_open = px_chat_ht === configMap.chat_extend_height
-    , is_closed = px_chat_ht === configMap.chat_retract_height
-    , is_sliding = (!is_open) && (!is_closed);
-
-    // 競合状態を避ける
-    if( is_sliding ){ return false; }
-
-    // 拡大開始
-    if( do_extend ){
-      jqueryMap.$chat.animate(
-        { height : configMap.chat_extend_height }
-        , configMap.chat_extend_time
-        , function(){
-          jqueryMap.$chat.attr( 'title', configMap.chat_extent_title );
-          stateMap.is_chat_rectacted = false;
-          if( callback ){ callback( jqueryMap.$chat ); }
-        }
-      );
-      return true;
-    }
-
-    // 格納開始
-    jqueryMap.$chat.animate(
-      { height: configMap.chat_retract_height }
-      , configMap.chat_retract_time
-      , function(){
-        jqueryMap.$chat.attr( 'title', configMap.chat_rectact_title );
-        stateMap.is_chat_rectacted = true;
-        if( callback ){ callback( jqueryMap.$chat ); }
-      }
-    );
-
-    return true;
+  setChatAnchor = function( position_type ){
+    return changeAnchorPart({ chat: position_type });
   };
 
   changeAnchorPart = function( arg_map ){
@@ -117,11 +79,10 @@ la.shell = ( function(){
       , key_name_dep;
 
     // アンカーマップへ変更を統合開始
-    KEYVAL:
     for( key_name in arg_map ){
       if( arg_map.hasOwnProperty( key_name ) ){
         // 反復中に従属キーを飛ばす
-        if( key_name.indexOf( '_' ) === 0 ) { continue KEYVAL; }
+        if( key_name.indexOf( '_' ) === 0 ) { continue; }
 
         // 独立キー値を更新
         anchor_map_revise[key_name] = arg_map[key_name];
@@ -158,13 +119,15 @@ la.shell = ( function(){
       , anchor_map_proposed
       , _s_chat_previous
       , _s_chat_proposed
-      , s_chat_proposed;
+      , s_chat_proposed
+      , is_ok = true;
 
     // アンカーの解析を試みる
     try{
       anchor_map_proposed = $.uriAnchor.makeAnchorMap();
     }
     catch( error ){
+      console.log(error);
       $.uriAnchor.setAnchor( anchor_map_previous, null, true );
       return false;
     }
@@ -173,33 +136,39 @@ la.shell = ( function(){
     // 便利な変数？
     _s_chat_previous = anchor_map_previous._s_chat;
     _s_chat_proposed = anchor_map_proposed._s_chat;
+console.log(_s_chat_previous);
+console.log(_s_chat_proposed);
+console.log(anchor_map_previous);
 
     // 変更されている場合、チャットコンポーネントの調整
     if( !anchor_map_previous || _s_chat_previous !== _s_chat_proposed ){
       s_chat_proposed = anchor_map_proposed.chat;
+      console.log(s_chat_proposed);
       switch( s_chat_proposed ){
-        case 'open':
-          toggleChat( true );
+        case 'opened':
+          is_ok = la.chat.setSliderPosition( 'opened' );
           break;
         case 'closed':
-          toggleChat( false );
+          is_ok = la.chat.setSliderPosition( 'closed' );
           break;
         default:
-          toggleChat( false );
+          la.chat.setSliderPosition( 'closed' );
           delete anchor_map_proposed.chat;
           $.uriAnchor.setAnchor( anchor_map_proposed, null, true );
       }
     }
 
-    return false;
-  };
+    // スライダーの変更が拒否された場合、アンカーを元に戻す
+    if( !is_ok ){
+      if( anchor_map_previous ){
+        $.uriAnchor.setAnchor( anchor_map_previous, null, true );
+        stateMap.anchor_map = anchor_map_previous;
+      } else {
+        delete anchor_map_proposed.chat;
+        $.uriAnchor.setAnchor( anchor_map_proposed, null, true );
+      }
+    }
 
-  onClickChat = function( event ){
-    console.log('onClickChat');
-    console.log(event);
-    changeAnchorPart({
-      chat : ( stateMap.is_chat_rectacted ? 'open' : 'closed' )
-    });
     return false;
   };
 
@@ -208,16 +177,18 @@ la.shell = ( function(){
     $container.html( configMap.main_html );
     setJqueryMap();
 
-    // 切り替えテスト
-    stateMap.is_chat_rectacted = true;
-    jqueryMap.$chat
-      .attr( 'title', configMap.chat_rectact_title )
-      .click( onClickChat );
-
     // uriAnchorをセット
     $.uriAnchor.configModule({
       schema_map : configMap.anchor_schema_map
     });
+
+    // 機能モジュールを構成して初期化
+    la.chat.configModule({
+      set_chat_anchor : setChatAnchor
+      , chat_model : la.model.chat
+      , people_model : la.model.people
+    });
+    la.chat.initModule( jqueryMap.$container );
 
     // uriAnchor変更イベントを処理する
     // すべての機能モジュールを設定してから初期化する

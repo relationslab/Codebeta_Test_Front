@@ -1,7 +1,7 @@
 
 .la-shell-head, .la-shell-head-logo, .la-shell-head-tab, .la-shell-head-options,
 .la-shell-main, .la-shell-main-status, .la-shell-main-game, .la-shell-main-roadmap, .la-shell-main-code, .la-shell-main-logs,
-.la-shell-foot, .la-shell-chat, .la-shell-modal
+.la-shell-foot, .la-shell-modal
 {
   position: absolute;
 }
@@ -90,22 +90,8 @@
   background-color: black;
 }
 
-.la-shell-chat{
-  bottom: 0;
-  right: 0;
-  width: 300px;
-  height: 15px;
-  border-radius: 5px 0 0 0;
-  background: red;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.la-shell-chat:hover{
-  background-color: #a00;
-}
-
 .la-shell-modal{
+  display: none;
   margin-top: -200px;
   margin-left: -200px;
   top: 50%;
