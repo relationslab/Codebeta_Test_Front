@@ -12,11 +12,7 @@
 
 var la = (function(){
   var initModule = function( $container ){
-    $container.html(
-      '<h1 style="display: inline-block; margin: 25px;">'
-      + 'hello world'
-      + '</h1>'
-    );
+    la.shell.initModule( $container );
   };
 
   return { initModule: initModule };
