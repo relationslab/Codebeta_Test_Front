@@ -8,7 +8,7 @@
   white: true
 */
 
-/*global $, la:true */
+/*global $, la */
 
 la.model = (function(){
   return {};

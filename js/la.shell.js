@@ -8,51 +8,51 @@
   white: true
 */
 
-/*global $, la:true */
+/*global $, la */
 
 la.shell = ( function(){
-  var configMap = {
-    anchor_schema_map : {
-      chat : { opened : true, closed : true }
+  var
+    // private変数
+    configMap = {
+      anchor_schema_map : {
+        chat : { opened : true, closed : true }
+      }
+      , resize_interval : 200
+      , main_html: String()
+      + '<div class="la-shell-head">'
+        + '<div class="la-shell-head-logo"></div>'
+        + '<div class="la-shell-head-tab"></div>'
+        + '<div class="la-shell-head-options"></div>'
+      + '</div>'
+      + '<div class="la-shell-main">'
+        + '<div class="la-shell-main-status"></div>'
+        + '<div class="la-shell-main-game"></div>'
+        + '<div class="la-shell-main-roadmap"></div>'
+        + '<div class="la-shell-main-code"></div>'
+        + '<div class="la-shell-main-logs"></div>'
+      + '</div>'
+      + '<div class="la-shell-foot"></div>'
+      + '<div class="la-shell-modal"></div>'
     }
+    , stateMap = {
+      $container : undefined
+      , anchor_map : {}
+      , resize_idto : undefined
+    }
+    , jqueryMap = { }
 
-    , main_html: String()
-    + '<div class="la-shell-head">'
-      + '<div class="la-shell-head-logo"></div>'
-      + '<div class="la-shell-head-tab"></div>'
-      + '<div class="la-shell-head-options"></div>'
-    + '</div>'
+    // private関数
+    , copyAnchorMap     // 現在のURIAnchorのコピーを返す
+    , setJqueryMap      // jQueryエレメントを予め獲得しておく
+    , changeAnchorPart  // アンカー処理
 
-    + '<div class="la-shell-main">'
-      + '<div class="la-shell-main-status"></div>'
-      + '<div class="la-shell-main-game"></div>'
-      + '<div class="la-shell-main-roadmap"></div>'
-      + '<div class="la-shell-main-code"></div>'
-      + '<div class="la-shell-main-logs"></div>'
-    + '</div>'
+    // イベントハンドラ
+    , onHashchange // uriAnchor変更イベント
+    , onResize     // windowリサイズ
 
-    + '<div class="la-shell-foot"></div>'
-    + '<div class="la-shell-modal"></div>'
-
-    , chat_extend_time : 250
-    , chat_retract_time : 300
-    , chat_extend_height : 450
-    , chat_retract_height: 15
-    , chat_extent_title : 'Click to retract'
-    , chat_rectact_title : 'Click to extend'
-  }
-
-  , stateMap = {
-      anchor_map : {}
-  }
-  , jqueryMap = { }
-
-  , copyAnchorMap
-  , setJqueryMap
-  , changeAnchorPart
-  , onHashchange
-  , setChatAnchor
-  , initModule;
+    // public関数
+    , initModule     // 初期化処理
+    , setChatAnchor; // チャット向けのアンカー処理（open/closeの処理）
 
   copyAnchorMap = function(){
     return $.extend( true, {}, stateMap.anchor_map );
@@ -61,17 +61,11 @@ la.shell = ( function(){
   setJqueryMap = function(){
     var $container = stateMap.$container;
     jqueryMap = {
-      $container: $container
+      $container : $container
     };
   };
 
-  setChatAnchor = function( position_type ){
-    return changeAnchorPart({ chat: position_type });
-  };
-
   changeAnchorPart = function( arg_map ){
-    console.log('changeAnchorPart');
-    console.log(arg_map);
     var
       anchor_map_revise = copyAnchorMap()
       , bool_return = true
@@ -112,8 +106,7 @@ la.shell = ( function(){
   };
 
   onHashchange = function( event ){
-    console.log('onHashchange');
-    console.log(event);
+    console.log('onHashchange');console.log(event);
     var
       anchor_map_previous = copyAnchorMap()
       , anchor_map_proposed
@@ -136,14 +129,10 @@ la.shell = ( function(){
     // 便利な変数？
     _s_chat_previous = anchor_map_previous._s_chat;
     _s_chat_proposed = anchor_map_proposed._s_chat;
-console.log(_s_chat_previous);
-console.log(_s_chat_proposed);
-console.log(anchor_map_previous);
 
     // 変更されている場合、チャットコンポーネントの調整
     if( !anchor_map_previous || _s_chat_previous !== _s_chat_proposed ){
       s_chat_proposed = anchor_map_proposed.chat;
-      console.log(s_chat_proposed);
       switch( s_chat_proposed ){
         case 'opened':
           is_ok = la.chat.setSliderPosition( 'opened' );
@@ -172,6 +161,18 @@ console.log(anchor_map_previous);
     return false;
   };
 
+  onResize = function(){
+    if( stateMap.resize_idto ){ return true; }
+
+    la.chat.handleResize();
+    stateMap.resize_idto = setTimeout(
+      function(){ stateMap.resize_idto = undefined; }
+      , configMap.resize_interval
+    );
+
+    return true;
+  };
+
   initModule = function( $container ){
     stateMap.$container = $container;
     $container.html( configMap.main_html );
@@ -193,8 +194,13 @@ console.log(anchor_map_previous);
     // uriAnchor変更イベントを処理する
     // すべての機能モジュールを設定してから初期化する
     $(window)
+      .bind( 'resize', onResize )
       .bind( 'hashchange', onHashchange )
       .trigger( 'hashchange' );
+  };
+
+  setChatAnchor = function( position_type ){
+    return changeAnchorPart({ chat: position_type });
   };
 
   return { initModule : initModule };

@@ -8,7 +8,7 @@
   white: true
 */
 
-/*global $, la:true */
+/*global $, la */
 
 la.util = (function(){
   var
@@ -48,5 +48,5 @@ la.util = (function(){
     makeError : makeError
     , setConfigMap : setConfigMap
   };
-  
+
 }());

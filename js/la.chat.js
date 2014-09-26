@@ -8,7 +8,7 @@
   white: true
 */
 
-/*global $, la:true */
+/*global $, la, getComputedStyle */
 
 la.chat = ( function() {
   var
@@ -44,8 +44,10 @@ la.chat = ( function() {
 
       , slider_open_time : 250
       , slider_close_time : 250
-      , slider_opened_em : 16
+      , slider_opened_em : 18
       , slider_closed_em : 2
+      , slider_opened_min_em : 10
+      , window_height_min_em : 20
       , slider_opened_title : 'Click to close'
       , slider_closed_title : 'Click to open'
 
@@ -63,13 +65,21 @@ la.chat = ( function() {
       , slider_opened_px : 0
     }
     , jqueryMap = {}
-    , setJqueryMap
-    , getEmSize
-    , setPxSizes
-    , setSliderPosition
-    , onClickToggle
-    , configModule
-    , initModule;
+
+    // private関数
+    , setJqueryMap      // jQueryエレメントを初期化時にまとめて取得
+    , getEmSize         // px→em
+    , setPxSizes        // スライダのサイズを設定
+    , setSliderPosition // チャットスライダーの位置を決定
+
+    // イベントハンドラ
+    , onClickToggle // open/closeトグル
+
+    // public関数
+    , initModule    // 初期化
+    , configModule  // 初期化時の設定情報を渡す
+    , removeSlider  // スライダの削除
+    , handleResize; // windowリサイズ処理
 
   setJqueryMap = function() {
     var
@@ -86,7 +96,6 @@ la.chat = ( function() {
       , $box : $slider.find('.la-chat-box')
       , $input : $slider.find('.la-chat-input [type=text]')
     };
-    console.log(jqueryMap);
   };
 
   getEmSize = function( elem ){
@@ -94,9 +103,12 @@ la.chat = ( function() {
   };
 
   setPxSizes = function(){
-    var px_per_em, opened_height_em;
+    var px_per_em, window_height_em, opened_height_em;
     px_per_em = getEmSize( jqueryMap.$slider.get(0) );
-    opened_height_em = configMap.slider_opened_em;
+    window_height_em = Math.floor( ($(window).height() / px_per_em )+0.5 );
+    opened_height_em = window_height_em > configMap.window_height_min_em
+      ? configMap.slider_opened_em
+      : configMap.slider_opened_min_em;
 
     stateMap.px_per_em = px_per_em;
     stateMap.slider_closed_px = configMap.slider_closed_em * px_per_em;
@@ -163,16 +175,6 @@ la.chat = ( function() {
     return false;
   };
 
-  configModule = function( input_map ) {
-    la.util.setConfigMap({
-      input_map : input_map
-      , settable_map : configMap.settable_map
-      , config_map : configMap
-    });
-
-    return true;
-  };
-
   initModule = function( $append_target ){
     $append_target.append( configMap.main_html );
     stateMap.$append_target = $append_target;
@@ -186,10 +188,49 @@ la.chat = ( function() {
     return true;
   };
 
+  configModule = function( input_map ) {
+    la.util.setConfigMap({
+      input_map : input_map
+      , settable_map : configMap.settable_map
+      , config_map : configMap
+    });
+
+    return true;
+  };
+
+  removeSlider = function(){
+    // DOMObjectとイベントバインディングを削除
+    if( jqueryMap.$slider ){
+      jqueryMap.$slider.remove();
+      jqueryMap = {};
+    }
+    stateMap.$append_target = null;
+    stateMap.position_type = 'closed';
+
+    // 主な構成を解除
+    configMap.chat_model = null;
+    configMap.people_model = null;
+    configMap.set_chat_anchor = null;
+    return true;
+  };
+
+  handleResize = function(){
+    // スライダーがなければ何もしない
+    if( !jqueryMap.$slider ){ return false; }
+
+    setPxSizes();
+    if( stateMap.position_type === 'opened' ){
+      jqueryMap.$slider.css({ height: stateMap.slider_opened_px });
+    }
+    return true;
+  };
+
   return {
     setSliderPosition: setSliderPosition
     , configModule : configModule
     , initModule : initModule
+    , removeSlider : removeSlider
+    , handleResize : handleResize
   };
 
 }());

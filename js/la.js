@@ -8,7 +8,7 @@
   white: true
 */
 
-/*global $, la:true */
+/*global $ */
 
 var la = (function(){
   var initModule = function( $container ){
