@@ -17,16 +17,30 @@
 .la-shell-head-logo{
   top: 0;
   left: 0;
-  width: 320px;
+  width: 200px;
   bottom: 0;
   background: orange;
 }
 
 .la-shell-head-tab{
   top: 0;
-  left: 320px;
-  width: 500px;
+  left: 200px;
+  right: 200px;
   bottom: 0;
+}
+
+.la-shell-head-tab ul{
+  list-style-type: none;
+}
+
+.la-shell-head-tab ul li{
+  display: block;
+  float: left;
+  width: 200px;
+  font-size: 16px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
 }
 
 .la-shell-head-options{
@@ -36,50 +50,18 @@
   bottom: 0;
 }
 
-.la-shell-main{
-  top: 40px;
-  left: 0;
-  bottom: 20px;
-  right: 0;
-  background-color: #eee;
+.la-shell-head-options ul{
+  list-style-type: none;
 }
 
-.la-shell-main-status{
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-}
-
-.la-shell-main-game{
-  top: 40px;
-  left: 0;
-  width: 320px;
-  height: 380px;
-  background-color: cyan;
-}
-
-.la-shell-main-roadmap{
-  top: 420px;
-  left: 0;
-  width: 320px;
-  bottom: 0;
-  background-color: blue;
-}
-
-.la-shell-main-code{
-  top: 40px;
-  left: 320px;
-  right: 200px;
-  bottom: 0;
-  background-color: white;
-}
-
-.la-shell-main-logs{
-  top: 50px;
-  width: 200px;
-  bottom: 0;
-  right: 0;
+.la-shell-head-options ul li{
+  display: block;
+  float: left;
+  width: 48px;
+  font-size: 32px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
 }
 
 .la-shell-foot{
