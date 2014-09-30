@@ -3,6 +3,32 @@
 
 <head>
   <title>HTML Layout</title>
+
+  <!-- third-party css -->
+  <link rel="stylesheet" href="js/codemirror/lib/codemirror.css" type="text/css" />
+
+  <!-- style sheets -->
+  <link rel="stylesheet" href="css/la.css" type="text/css" />
+  <link rel="stylesheet" href="css/la.chat.css" type="text/css" />
+  <link rel="stylesheet" href="css/la.shell.css" type="text/css" />
+
+  <!-- third-party js -->
+  <script src="js/jquery/jquery.js"></script>
+  <script src="js/jquery/jquery.uriAnchor.js"></script>
+  <script src="js/jquery/jquery.event.gevent.js"></script>
+  <script src="js/jquery/jquery.event.ue.js"></script>
+  <script src="js/jquery/taffydb.js"></script>
+  <script src="js/codemirror/lib/codemirror.js"></script>
+  <script src="js/codemirror/mode/javascript/javascript.js"></script>
+
+  <!-- js -->
+  <script src="js/codemirror/init.js"></script>
+  <script src="js/la.js"></script>
+  <script src="js/la.util.js"></script>
+  <script src="js/la.model.js"></script>
+  <script src="js/la.shell.js"></script>
+  <script src="js/la.chat.js"></script>
+
   <link rel="stylesheet" href="css/la.css" type="text/css" />
   <link rel="stylesheet" href="css/la.shell.css" type="text/css" />
   <link rel="stylesheet" href="css/la.main.css" type="text/css" />
@@ -52,10 +78,10 @@
         </div>
 
         <div class="la-shell-main-game-control">
-          <div class="la-shell-main-game-control-play"></div>
-          <div class="la-shell-main-game-control-stop"></div>
-          <div class="la-shell-main-game-control-save"></div>
-          <div class="la-shell-main-game-control-update"></div>
+          <div class="la-shell-main-game-control-play">▶</div>
+          <div class="la-shell-main-game-control-stop">‖</div>
+          <div class="la-shell-main-game-control-save">作業内容保存</div>
+          <div class="la-shell-main-game-control-update">アップデート</div>
         </div>
       </div>
 
@@ -93,26 +119,35 @@
       </div>
 
       <div class="la-shell-main-code">
-        <textarea class="la-shell-main-code-editor"></textarea>
+        <div class="la-shell-main-code-inner">
+          <textarea class="la-shell-main-code-editor" id="code" name="code"></textarea>
+        </div>
       </div>
 
       <div class="la-shell-main-logs">
-        <div class="la-shell-main-logs-log">
-          <div class="la-shell-main-logs-log-detal">
-            <div class="la-shell-main-logs-log-detail-diff"></div>
-            <div class="la-shell-main-logs-log-detail-comment"></div>
-          </div>
-          <div class="la-shell-main-logs-log-date"></div>
-        </div>
+        <ul>
+          <li class="la-shell-main-logs-log">
+            <div class="la-shell-main-logs-log-detail">
+              <div class="la-shell-main-logs-log-detail-diff"></div>
+              <div class="la-shell-main-logs-log-detail-comment"></div>
+            </div>
+            <div class="la-shell-main-logs-log-date">2014/9/18 14:20</div>
+          </li>
 
-        <div class="la-shell-main-logs-log">
-        </div>
+          <li class="la-shell-main-logs-log">
+            <div class="la-shell-main-logs-log-detail">
+              <div class="la-shell-main-logs-log-detail-diff"></div>
+              <div class="la-shell-main-logs-log-detail-comment"></div>
+            </div>
+            <div class="la-shell-main-logs-log-date">2014/9/18 13:11</div>
+          </li>
 
-        <div class="la-shell-main-logs-log">
-        </div>
+          <li class="la-shell-main-logs-log">
+          </li>
 
-        <div class="la-shell-main-logs-log">
-        </div>
+          <li class="la-shell-main-logs-log">
+          </li>
+        </ul>
       </div>
     </div>
 
