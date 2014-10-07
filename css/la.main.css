@@ -1,25 +1,27 @@
-
-
-
 .la-shell-main{
   position: absolute;
   top: 40px;
   left: 0;
   bottom: 8px;
   right: 0;
-  background-color: #eee;
+  background-color: #f2f2f2;
 }
 
-
-
+.la-shell-main-status-bar{
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+  height: 35px;
+  background: #505050;
+}
 
 
 .la-shell-main-status{
   position: absolute;
-  top: 0;
-  left: 8px;
-  right: 8px;
-  height: 40px;
+  width:750px;
+  height: 35px;
+  padding-left: 40px;
 }
 
 .la-shell-main-status ul{
@@ -29,41 +31,79 @@
 .la-shell-main-status ul li{
   display: block;
   float: left;
-  width: 240px;
-  font-size: 16px;
-  line-height: 40px;
-  color: black;
-  text-align: center;
+  width: auto;
+  height: 30px;
+  margin-top: 2.5px;
+  margin-left: 3px;
+  margin-right: 30px;
+}
+
+.la-shell-main-status ul li img{
+  float: left;
+  width: auto;
+  height: 30px;
+}
+
+.la-shell-main-status ul li p{
+  float: left;
+  height: 100%;
+  line-height: 30px;
+  font-size: 12px;
+  color: white;
 }
 
 
+.la-shell-main-save{
+  position: absolute;
+  right: 0;
+  width: 160px;
+  height: 35px;
+  margin-right: 40px;
+  background: #505050;
+}
 
+.la-shell-main-save ul{
+  list-style-type: none;
+}
 
+.la-shell-main-save ul li{
+  display: block;
+  float: left;
+  width: 70px;
+  height: 25px;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  line-height: 25px;
+}
+
+.la-shell-main-save-now li{
+  background: #3C97AC;
+}
+
+.la-shell-main-save-past li{
+  background: #919191;
+}
 
 .la-shell-main-game{
   position: absolute;
-  top: 40px;
-  left: 8px;
-  width: 322px;
-  height: 400px;
-}
-
-.la-shell-main-game-preview{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 322px;
-  height: 322px;
-  background-color: white;
-  border: 1px solid black;
+  top: 90px;
+  left: 40px;
+  width: 436px;
+  height: 320px;
+  background: #000000;
 }
 
 .la-shell-main-game-title{
   position: absolute;
-  top: 322px;
+  top: 0;
   left: 0;
-  width: 100%;
+  width: 436px;
   height: 20px;
+  background: #505050;
+
 }
 
 .la-shell-main-game-title p{
@@ -73,109 +113,357 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 20px;
+  color: #FFFFFF;
+}
+
+
+.la-shell-main-game-preview{
+  float: left;
+  margin-top: 20px;
+  margin-left: 0;
+  width: 300px;
+  height: 300px;
+  background-color: white;
 }
 
 .la-shell-main-game-control{
-  position: absolute;
-  top: 342px;
-  left: 0;
-  width: 100%;
-  height: 60px;
+  float: left;
+  width: 136px;
+  height: 300px;
+  margin-top: 25px;
 }
 
 .la-shell-main-game-control-play{
-  position: absolute;
   left: 0;
   top: 0;
-  width: 28px;
-  height: 28px;
+  width: 60px;
+  height: 60px;
+  margin-left: 38px;
+  margin-top: 5px;
   font-size: 24px;
-  line-height: 28px;
   text-align: center;
 }
+
+.la-shell-main-game-control-play img{
+  width: 60px;
+  height: 60px;
+}
+
 
 .la-shell-main-game-control-stop{
-  position: absolute;
-  left: 40px;
+  left: 50px;
   top: 0;
-  width: 28px;
-  height: 28px;
+  width: 60px;
+  height: 60px;
+  margin-left: 38px;
+  margin-top: 5px;
   font-size: 24px;
-  line-height: 28px;
+  line-height: 80px;
   text-align: center;
 }
 
-.la-shell-main-game-control-save{
-  position: absolute;
-  left: 80px;
+.la-shell-main-game-control-stop img{
+  width: 60px;
+  height: 60px;
+}
+
+.la-shell-main-game-control-volu{
+  left: 50px;
   top: 0;
-  width: 120px;
-  height: 28px;
-  color: white;
-  background-color: #09c;
-  font-size: 16px;
-  line-height: 28px;
+  width: 60px;
+  height: 60px;
+  margin-left: 38px;
+  margin-top: 5px;
+  font-size: 24px;
+  line-height: 80px;
   text-align: center;
 }
+
+.la-shell-main-game-control-volu img{
+  width: 60px;
+  height: 60px;
+}
+
 
 .la-shell-main-game-control-update{
-  position: absolute;
   right: 0;
-  top: 0;
-  width: 120px;
-  height: 28px;
+  top: 6px;
+  width: 136px;
+  height: auto;
+  margin-top: 9px;
   color: white;
-  background-color: #f90;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 12px;
+  line-height: 80px;
   text-align: center;
 }
 
+.la-shell-main-game-control-update img{
+  right: 0;
+  width: 136px;
+  height: auto;
+  color: white;
+  font-size: 12px;
+  line-height: 80px;
+  text-align: center;
+}
 
-
-
-
-.la-shell-main-roadmap{
+.la-shell-main-objective{
   position: absolute;
-  top: 430px;
-  left: 8px;
-  width: 322px;
+  top: 420px;
+  left: 40px;
+  width: 436px;
   bottom: 0;
-  border: 1px solid black;
-  background-color: blue;
+  background: #FFFFFF;
 }
 
-.la-shell-main-roadmap-level{
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  background-color: white;
+
+.la-shell-main-objective-contents{
+  width: 436px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
   text-align: center;
-  font-size: 16px;
-  line-height: 20px;
+  color: #FFFFFF;
+  background: #505050;
 }
 
-.la-shell-main-roadmap-level-header{
-  position: absolute;
-  width: 100%;
+
+.la-shell-main-objective-step{
+  width: 420px;
+  height: 70px;
+  margin-left: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: center;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+.la-shell-main-objective-step-status{
+  float: left;
+  width: 250px;
+  height: 60px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: center;
+  
+}
+
+.la-shell-main-objective-step-name{
+  width: 120px;
+  margin-left: 65px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  border: 1px solid #919191;
+  border-radius: 8px;
+}
+
+.la-shell-main-objective-step-contents{
+  left: 0;
+  width: 250px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+  text-align: center;
+  color: #000000;
+}
+
+.la-shell-main-objective-step-skill{
+  float :left;
+  width: 170px;
   height: 20px;
-  border-bottom: 1px solid black;
-  background-color: white;
-  text-align: center;
-  font-size: 16px;
   line-height: 20px;
+  font-size: 11px;
+  text-align: center;
+  color: #000000;
 }
 
 
+.la-shell-main-objective-step-skill img{
+  float: left;
+  height: 18px;
+  width: auto;
+  margin-left: 10px;
+  margin-bottom: 3px;
+  
+}
 
+.la-shell-main-objective-step-skill-set{
+  height: 18px;
+  margin-bottom: 3px;
+}
+
+
+.la-shell-main-objective-step-skill-detail{
+  float: left;
+  height: 18px;
+  padding-left:10px;
+  padding-right:10px;
+  margin-left: 2px;
+  margin-bottom: 3px;
+  line-height: 20px;
+  font-size: 11px;
+  text-align: center;
+  color: #919191;
+  background: #EFEFEF;
+  border: 1px solid #EFEFEF;
+  border-radius: 8px;
+}
+
+
+.la-shell-main-objective-step-past{
+  text-align: left;
+  text-decoration:underline;
+}
+
+.la-shell-main-objective-step-now{
+  text-align: left;
+  color: #3C97AC;
+}
+
+.la-shell-main-objective-step-next{
+  text-align: left;
+  text-decoration:underline;
+}
+
+.la-shell-main-objective-step-all{
+  text-align: right;
+  color: #3C97AC;
+}
+
+.la-shell-main-objective-hint{
+  width: 420px;
+  height: 40px;
+  margin-left: 8px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.la-shell-main-objective-hint-script{
+  float: left;
+  width: 250px;
+  height: 40px;
+  padding-left: 40px;
+  margin-top: 2px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.la-shell-main-objective-hint-next{
+  float: left;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  color: #000000;
+}
+
+.la-shell-main-objective-hint-next-number{
+  float: left;
+  height: 40px;
+  width: 25px;
+  margin-left: 5px;
+  line-height: 40px;
+  font-size: 20px;
+  color: #3C97AC;
+}
+
+.la-shell-main-objective-hint-next-try{
+  float: left;
+  height: 40px;
+  width: 50px;
+  margin-left: 5px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #000000;
+ 
+}
+
+.la-shell-main-objective-hint-button{
+  float: left;
+  width: 170px;
+  height: 40px;
+  margin-top: 2px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.la-shell-main-objective-hint-one{
+  float: left;
+  width: 50px;
+  height: 25px;
+  margin-left: 10px;
+  margin-top: 7.5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 25px;
+  font-size: 10px;
+  color: #FFFFFF;
+  text-align: center;
+  background: #3C97AC;
+  border: 1px solid #3C97AC;
+  border-radius: 8px;
+}
+
+.la-shell-main-objective-hint-two{
+  float: left;
+  width: 50px;
+  height: 25px;
+  margin-left: 5px;
+  margin-top: 7.5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 25px;
+  font-size: 10px;
+  color: #FFFFFF;
+  text-align: center;
+  background: #AFEEEE;
+  border: 1px solid #AFEEEE;
+  border-radius: 8px;
+}
+
+.la-shell-main-objective-hint-three{
+  float: left;
+  width: 50px;
+  height: 25px;
+  margin-left: 5px;
+  margin-top: 7.5px;
+  padding-left: 2px;
+  padding-right: 5px;
+  line-height: 25px;
+  font-size: 10px;
+  color: #FFFFFF;
+  text-align: center;
+  background: #AFEEEE;
+  border: 1px solid #AFEEEE;
+  border-radius: 8px;
+}
+
+.la-shell-main-objective-otherstep{
+  height: 30px;
+  width: 420px;
+  margin-top: 6px;
+  margin-left: 8px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #EFEFEF;
+  text-align: center;
+  background: #3C97AC;
+}
 
 
 .la-shell-main-code{
-  top: 40px;
-  left: 340px;
-  right: 200px;
+  top: 78px;
+  left: 516px;
+  right: 40px;
   bottom: 0;
   border: 1px solid black;
   background-color: white;
@@ -185,9 +473,6 @@
   width: 100%;
   height: 100%;
 }
-
-
-
 
 
 .la-shell-main-logs{

@@ -1,0 +1,222 @@
+.body{
+ height: auto;
+}
+
+
+.la-shell-list{
+  position: absolute;
+  top: 40px;
+  left: 0;
+  bottom: 8px;
+  right: 0;
+  height: 1300px;
+  background-color: #f2f2f2;
+}
+
+
+.la-shell-list-sample-space{
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+}
+
+.la-shell-list-bar{
+  height: 30px;
+  width: 980px;
+  margin-top: 16px;
+  margin-left: 150px;
+  border-bottom: 1px solid #b4b4b4;
+}
+
+.la-shell-list-bar-sample{
+  height: 30px;
+  width: 980px;
+  line-height: 35px;
+  color: #505050;
+}
+
+.la-shell-list-gamespace{
+  height: auto;
+  width: 980px;
+  margin-left: 150px;
+}
+
+.la-shell-list-game-frame1{
+  margin-top :20px;
+  float: left;
+  min-height: 296px;
+  width: 222.5px;
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 2px 2px #DCDDDD;
+}
+
+.la-shell-list-game-frame{
+  margin-top: 20px;
+  float: left;
+  margin-left: 30px;
+  min-height: 296px;
+  width: 222.5px;
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 2px 2px #DCDDDD;
+}
+
+.la-shell-list-gamescreen{
+  margin-left: 4.5px;
+  margin-top: 5px;
+  height: 212.5px;
+  width: 212.5px;
+  background: #EFEFEF ;
+}
+
+.la-shell-list-gametitle{
+  margin-left: 4.5px;
+  min-height: 30px;
+  line-height: 30px;
+  width: 212.5px;
+  border-bottom: 1px solid #f2f2f2;
+ 
+}
+
+.la-shell-list-gamename{
+  float: left;
+  height: auto;
+  width: 162.5px;
+  font-size: 11px;
+  color: #3C97AC;
+}
+
+
+.la-shell-list-gamedate{
+  float: left;
+  margin-left: 2px;
+  height: auto;
+  width: 48px;
+  font-size: 10px;
+  color: #919191;
+  text-align: right;
+}
+
+
+.la-shell-list-gameinfo{
+  margin-left: 4.5px;
+  height: 48.5px;
+  width: 212.5px;
+ 
+}
+
+.la-shell-list-gameinfo-photo{
+ float: left;
+ height: 34.5px;
+ width: 34.5px;
+ margin-top: 7px;
+ border: 1px solid #919191;
+}
+
+.la-shell-list-gameinfo-icon{
+  float: left;
+  width: 174px;
+  hight: 34.5px;
+  margin-top: 5px;
+}
+
+
+.la-shell-list-gameinfo-play{
+ float: right;
+ height: 22px;
+ width: auto;
+ margin-top: 8.25px;
+ margin-left: 10px;
+}
+
+.la-shell-list-gameinfo-play img{
+ float: left;
+ height: 22px;
+ width: 22px;
+}
+
+.la-shell-list-gameinfo-playnum{
+ float: left;
+ height: 22px;
+ line-height: 22px;
+ font-size: 10px;
+}
+
+
+.la-shell-list-gameinfo-comment{
+ float: right;
+ height: 22px;
+ width: auto;
+ margin-top: 8.25px;
+ margin-left: 10px;
+}
+
+.la-shell-list-gameinfo-comment img{
+ float: left;
+ height: 22px;
+ width: 22px;
+}
+
+.la-shell-list-gameinfo-commentnum{
+ float: left;
+ height: 22px;
+ line-height: 22px;
+ font-size: 10px;
+}
+
+
+.la-shell-list-gameinfo-like{
+ float: right;
+ height: 22px;
+ width: auto;
+ margin-top: 8.25px;
+ margin-left: 10px;
+}
+
+.la-shell-list-gameinfo-like img{
+ float: left;
+ height: 22px;
+ width: 22px;
+}
+
+.la-shell-list-gameinfo-likenum{
+ float: left;
+ height: 22px;
+ line-height: 22px;
+ font-size: 10px;
+ margin-right: 0px;
+}
+
+
+.la-shell-list-gameall{
+  float: left;
+  height: 20px;
+  width: 980px;
+  margin-top: 10px;
+  background: #f2f2f2;
+  text-align: right;
+  font-size: 11px;
+  color: #3C97AC;
+}
+
+
+.la-shell-list-my-space{
+  position: absolute;
+  top: 380px;
+  left: 0;
+  right: 0;
+  height: 480px;
+}
+
+.la-shell-list-other-space{
+  position: absolute;
+  top: 380px;
+  left: 0;
+  right: 0;
+  height: 480px;
+}
+

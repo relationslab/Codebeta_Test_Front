@@ -3,7 +3,7 @@
 
 <head>
   <title>HTML Layout</title>
-
+  <meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
   <!-- third-party css -->
   <link rel="stylesheet" href="js/codemirror/lib/codemirror.css" type="text/css" />
 
@@ -38,118 +38,99 @@
 <body>
   <div id="la">
     <div class="la-shell-head">
-      <div class="la-shell-head-logo">
+      <div class="la-shell-head-logo"><img src="img/header/logoicon.png">
       </div>
 
       <div class="la-shell-head-tab">
         <ul>
-          <li>ä½œæ¥­ã‚¹ãƒšãƒ¼ã‚¹</li>
-          <li>ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆä¸€è¦§</li>
+          <li>ƒ[ƒNƒXƒy[ƒX</li>
+          <li>ƒQ[ƒ€ˆê——</li>
         </ul>
       </div>
 
       <div class="la-shell-head-options">
         <ul>
-          <li>â—</li>
-          <li>â–²</li>
-          <li>â– </li>
-          <li>â‰¡</li>
+          <li><img src="img/header/noti.png"></li>
+          <li><img src="img/header/message.png"></li>
+          <li><img src="img/header/game.png"></li>
+          <li><img src="img/header/navi.png"></li>
         </ul>
       </div>
     </div>
 
     <div class="la-shell-main">
-      <div class="la-shell-main-status">
-        <ul>
-          <li>â†‘ã€€ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆå›žæ•°ã€€21</li>
-          <li>â–¶ã€€ç²å¾—å†ç”Ÿã€€221</li>
-          <li>â–¼ã€€ç²å¾—ã„ã„ã­ã€€16</li>
-          <li>â€ ã€€ç²å¾—ã‚¹ã‚­ãƒ«ã€€21</li>
-        </ul>
+      <div class="la-shell-main-status-bar">
+        <div class="la-shell-main-status">
+         <ul>
+	   <li><img src="img/status/update.png"><p>ƒÀƒŠƒŠ[ƒX@21</p></li>	    
+	   <li><img src="img/status/play.png"><p>Šl“¾Ä¶@21</p></li>	    
+	   <li><img src="img/status/like.png"><p>Šl“¾‚¢‚¢‚Ë@21</p></li>	    
+           <li><img src="img/status/skill.png"><p>Šl“¾ƒXƒLƒ‹@21</p></li>
+        </div>
+	<div class = "la-shell-main-save">
+      	 <ul>
+	  <div class = "la-shell-main-save-now">
+	  <li>•Û‘¶</li>
+	  </div>
+	  <div class = "la-shell-main-save-past">
+	  <li>•Û‘¶—š—ð</li>
+	  </div>
+	 </ul>
+        </div>
       </div>
-
+    </div>
       <div class="la-shell-main-game">
+	<div class="la-shell-main-game-title">
+          <p>ƒQ[ƒ€20140929a</p>
+        </div>
         <div class="la-shell-main-game-preview">
           <div class="la-shell-main-game-preview-canvas"></div>
         </div>
-
-        <div class="la-shell-main-game-title">
-          <p>ã‚²ãƒ¼ãƒ 20140929a</p>
-        </div>
-
-        <div class="la-shell-main-game-control">
-          <div class="la-shell-main-game-control-play">â–¶</div>
-          <div class="la-shell-main-game-control-stop">â€–</div>
-          <div class="la-shell-main-game-control-save">ä½œæ¥­å†…å®¹ä¿å­˜</div>
-          <div class="la-shell-main-game-control-update">ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ</div>
+	<div class="la-shell-main-game-control">
+          <div class="la-shell-main-game-control-play"><img src="img/selfgame/play.png"></div>
+          <div class="la-shell-main-game-control-stop"><img src="img/selfgame/stop.png"></div>
+	  <div class="la-shell-main-game-control-volu"><img src="img/selfgame/volu.png"></div>
+          <div class="la-shell-main-game-control-update"><img src="img/selfgame/beta_icon.png"></div>
         </div>
       </div>
-
-      <div class="la-shell-main-roadmap">
-        <div class="la-shell-main-roadmap-level">
-          <div class="la-shell-main-roadmap-level-header"></div>
-          <div class="la-shell-main-roadmap-level-contents">
-            <div class="la-shell-main-roadmap-level-contents-prev"></div>
-            <div class="la-shell-main-roadmap-level-contents-next"></div>
-            <div class="la-shell-main-roadmap-level-contents-generate"></div>
-          </div>
+      <div class="la-shell-main-objective">
+	<div class="la-shell-main-objective-contents">Lev1 ƒVƒ…[ƒeƒBƒ“ƒOƒQ[ƒ€</div>
+        <div class="la-shell-main-objective-step">
+	 <div class="la-shell-main-objective-step-status">
+	  <div class="la-shell-main-objective-step-name">ƒXƒeƒbƒv7</div>
+	  <div class="la-shell-main-objective-step-contents">ƒIƒuƒWƒFƒNƒg‚ð•\Ž¦‚·‚é</div>
+	 </div>
+	  <div class="la-shell-main-objective-step-skill">
+	   <div class="la-shell-main-objective-step-skill-set">
+	    <img src="img/status/skill.png"><div class="la-shell-main-objective-step-skill-detail">ƒIƒuƒWƒFƒNƒgŽwŒü</div></div>
+	   <div class="la-shell-main-objective-step-skill-set">
+	    <img src="img/status/skill.png"><div class="la-shell-main-objective-step-skill-detail">for•¶</div></div>
+	   <div class="la-shell-main-objective-step-skill-set">
+	    <img src="img/status/skill.png"><div class="la-shell-main-objective-step-skill-detail">if•¶</div></div>
+	  </div>
+	</div>
+        <div class="la-shell-main-objective-hint">
+	 <div class="la-shell-main-objective-hint-script">
+	  <div class="la-shell-main-objective-hint-next">ŽŸƒqƒ“ƒg‚Ü‚Å</div>
+	  <div class="la-shell-main-objective-hint-next-number">23</div>
+	  <div class="la-shell-main-objective-hint-next-try">ƒgƒ‰ƒC</div>
+	 </div>
+	 <div class="la-shell-main-objective-hint-button">
+	  <div class="la-shell-main-objective-hint-one">ƒqƒ“ƒg1</div>
+	  <div class="la-shell-main-objective-hint-two">ƒqƒ“ƒg2</div>
+	  <div class="la-shell-main-objective-hint-three">ƒqƒ“ƒg3</div>
+	 </div>
         </div>
-
-        <div class="la-shell-main-roadmap-steps">
-          <div class="la-shell-main-roadmap-steps-step">
-            <div class="la-shell-main-roadmap-steps-step-count"></div>
-            <div class="la-shell-main-roadmap-steps-step-title"></div>
-            <div class="la-shell-main-roadmap-steps-step-complete"></div>
-            <div class="la-shell-main-roadmap-steps-step-skills">
-              <ul>
-                <li>ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆæŒ‡å‘</li>
-                <li>foræ–‡</li>
-              </ul>
-
-            </div>
-            <div class="la-shell-main-roadmap-steps-step-hints">
-              <ul>
-                <li>10/30</li>
-                <li>20/30</li>
-                <li>30/30</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+	<div class="la-shell-main-objective-otherstep">•Ê‚ÌƒXƒeƒbƒv‚Ö</div>
+       
       </div>
-
+      
       <div class="la-shell-main-code">
         <div class="la-shell-main-code-inner">
           <textarea class="la-shell-main-code-editor" id="code" name="code"></textarea>
         </div>
       </div>
 
-      <div class="la-shell-main-logs">
-        <ul>
-          <li class="la-shell-main-logs-log">
-            <div class="la-shell-main-logs-log-detail">
-              <div class="la-shell-main-logs-log-detail-diff"></div>
-              <div class="la-shell-main-logs-log-detail-comment"></div>
-            </div>
-            <div class="la-shell-main-logs-log-date">2014/9/18 14:20</div>
-          </li>
-
-          <li class="la-shell-main-logs-log">
-            <div class="la-shell-main-logs-log-detail">
-              <div class="la-shell-main-logs-log-detail-diff"></div>
-              <div class="la-shell-main-logs-log-detail-comment"></div>
-            </div>
-            <div class="la-shell-main-logs-log-date">2014/9/18 13:11</div>
-          </li>
-
-          <li class="la-shell-main-logs-log">
-          </li>
-
-          <li class="la-shell-main-logs-log">
-          </li>
-        </ul>
-      </div>
-    </div>
 
     <div class="la-shell-foot">
     </div>

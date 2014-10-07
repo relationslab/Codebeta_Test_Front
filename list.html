@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>HTML List</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+  <!-- third-party css -->
+  <link rel="stylesheet" href="js/codemirror/lib/codemirror.css" type="text/css" />
+
+  <!-- style sheets -->
+  <link rel="stylesheet" href="css/la_list.css" type="text/css" />
+  <link rel="stylesheet" href="css/la.chat.css" type="text/css" />
+  <link rel="stylesheet" href="css/la.shell.css" type="text/css" />
+
+  <!-- third-party js -->
+  <script src="js/jquery/jquery.js"></script>
+  <script src="js/jquery/jquery.uriAnchor.js"></script>
+  <script src="js/jquery/jquery.event.gevent.js"></script>
+  <script src="js/jquery/jquery.event.ue.js"></script>
+  <script src="js/jquery/taffydb.js"></script>
+  <script src="js/codemirror/lib/codemirror.js"></script>
+  <script src="js/codemirror/mode/javascript/javascript.js"></script>
+
+  <!-- js -->
+  <script src="js/codemirror/init.js"></script>
+  <script src="js/la.js"></script>
+  <script src="js/la.util.js"></script>
+  <script src="js/la.model.js"></script>
+  <script src="js/la.shell.js"></script>
+  <script src="js/la.chat.js"></script>
+
+  <link rel="stylesheet" href="css/la_list.css" type="text/css" />
+  <link rel="stylesheet" href="css/la.shell.css" type="text/css" />
+  <link rel="stylesheet" href="css/la.list.css" type="text/css" />
+  <link rel="stylesheet" href="css/la.chat.css" type="text/css" />
+</head>
+
+<body>
+  <div id="la">
+    <div class="la-shell-head">
+      <div class="la-shell-head-logo"><img src="img/header/logoicon.png">
+      </div>
+
+      <div class="la-shell-head-tab">
+        <ul>
+          <li>ワークスペース</li>
+          <li>ゲーム一覧</li>
+        </ul>
+      </div>
+
+      <div class="la-shell-head-options">
+        <ul>
+          <li><img src="img/header/noti.png"></li>
+          <li><img src="img/header/message.png"></li>
+          <li><img src="img/header/game.png"></li>
+          <li><img src="img/header/navi.png"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="la-shell-list">
+      <div class="la-shell-list-sample-space">
+	<div class="la-shell-list-bar">
+	  <div class="la-shell-list-bar-sample">
+	    サンプルゲーム
+	  </div>
+	</div>
+	<div class="la-shell-list-gamespace">
+	  <div class="la-shell-list-game-frame1">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:シューティング</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	       <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">20</div></div>
+	       <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	       <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="la-shell-list-game-frame">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:ジャンピング</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	      <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">500</div></div>
+	      <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	      <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="la-shell-list-game-frame">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:ボンバーマン</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	      <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">500</div></div>
+	      <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	      <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      </div>
+	    </div>
+	  </div>
+	 <div class="la-shell-list-game-frame">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:ロールプレイング</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	      <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">500</div></div>
+	      <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	      <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      </div>
+	    </div>
+	 </div>
+	 
+	 <div class="la-shell-list-gameall">→すべて見る</div>
+       </div>
+       
+       <div class="la-shell-list-my-space">
+	<div class="la-shell-list-bar">
+	  <div class="la-shell-list-bar-sample">自分のゲーム</div>
+	</div>
+	<div class="la-shell-list-gamespace">
+	  <div class="la-shell-list-game-frame1">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:シューティング</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	      <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">500</div></div>
+	      <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="la-shell-list-game-frame">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:シューティング</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	      <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">500</div></div>
+	      <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="la-shell-list-game-frame">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:シューティング</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	      <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">500</div></div>
+	      <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	      </div>
+	    </div>
+	  </div>
+	 <div class="la-shell-list-game-frame">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:シューティング</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	      <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">500</div></div>
+	      <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	      <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      </div>
+	    </div>
+	 </div>
+	 
+	 <div class="la-shell-list-gameall">→すべて見る</div>
+       </div>
+
+<div class="la-shell-list-other-space">
+	<div class="la-shell-list-bar">
+	  <div class="la-shell-list-bar-sample">同期生のゲーム</div>
+	</div>
+	<div class="la-shell-list-gamespace">
+	  <div class="la-shell-list-game-frame1">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:シューティング</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	      <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">500</div></div>
+	      <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	      </div>
+	    </div>
+	    
+	  </div>
+	  <div class="la-shell-list-game-frame">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:ジャンピング</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	      <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">500</div></div>
+	      <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="la-shell-list-game-frame">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:シューティング</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	      <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">500</div></div>
+	      <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	      </div>
+	    </div>
+	  </div>
+	 <div class="la-shell-list-game-frame">
+	    <div class="la-shell-list-gamescreen"></div>
+	    <div class="la-shell-list-gametitle">
+	      <div class="la-shell-list-gamename">初級:シューティング</div>
+	      <div class="la-shell-list-gamedate">10月6日</div>
+	    </div>
+	    <div class="la-shell-list-gameinfo">
+	      <div class="la-shell-list-gameinfo-photo"></div>
+	      <div class="la-shell-list-gameinfo-icon">
+	      <div class="la-shell-list-gameinfo-comment"><img src="img/game/comment.png"><div class="la-shell-list-gameinfo-commentnum">500</div></div>
+	      <div class="la-shell-list-gameinfo-like"><img src="img/game/like.png"><div class="la-shell-list-gameinfo-likenum">1000</div></div>
+	      <div class="la-shell-list-gameinfo-play"><img src="img/game/play.png"><div class="la-shell-list-gameinfo-playnum">234</div></div>
+	      </div>
+	    </div>
+	 </div>
+	 <div class="la-shell-list-gameall">→すべて見る</div>
+       </div>
+
+    </div>
+   </div>
+  </div>
+</body>
+</html>

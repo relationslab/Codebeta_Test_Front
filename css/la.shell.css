@@ -11,20 +11,29 @@
   left: 0;
   right: 0;
   height: 40px;
-  background-color: #444;
+  background-color: #000000;
 }
 
 .la-shell-head-logo{
+  top: 3px;
+  left: 0;
+  bottom: 0;
+}
+
+.la-shell-head-logo img{
   top: 0;
   left: 0;
-  width: 200px;
+  width: auto;
+  height: 40px;
+  margin-left: 40px;
   bottom: 0;
-  background: orange;
 }
+
+
 
 .la-shell-head-tab{
   top: 0;
-  left: 200px;
+  left: 240px;
   right: 200px;
   bottom: 0;
 }
@@ -36,8 +45,8 @@
 .la-shell-head-tab ul li{
   display: block;
   float: left;
-  width: 200px;
-  font-size: 16px;
+  width: 150px;
+  font-size: 12px;
   line-height: 40px;
   color: white;
   text-align: center;
@@ -45,9 +54,10 @@
 
 .la-shell-head-options{
   top: 0;
-  right: 0;
+  right: 40px;
   width: 200px;
   bottom: 0;
+  
 }
 
 .la-shell-head-options ul{
@@ -57,11 +67,20 @@
 .la-shell-head-options ul li{
   display: block;
   float: left;
-  width: 48px;
+  height: 30px;
+  margin-left: 20px;
+  margin-top: 5px;
   font-size: 32px;
   line-height: 40px;
   color: white;
   text-align: center;
+  
+}
+
+.la-shell-head-options ul li img{
+  float: left;
+  width: auto;
+  height: 30px;
 }
 
 .la-shell-foot{
